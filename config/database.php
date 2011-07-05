@@ -17,7 +17,9 @@ $db = array(
 			// User of your database
 			'user'		=>	'root',
 			// User password
-			'password'	=>	''
+			'password'	=>	'',
+			// Connection charset
+			'charset'	=>	'utf8'
 		)
 		
 	),
@@ -25,6 +27,27 @@ $db = array(
 	// Default connection
 	'default'	=>	'development'
 	
+);
+
+# ----------------------------#
+# ActiveRecord Initialization #
+# ----------------------------#
+\ActiveRecord\Config::initialize(
+function($cfg) use ($db)
+{
+	// Set path to models directory
+	$cfg->set_model_directory(DIR_MODELS);
+
+	// Define connections as protocol url
+	foreach($db['connections'] as $connection => $options)
+		$connections[$connection] = $options['type'] . '://' . $options['user'] . ':' . $options['password'] . '@' . $options['server'] . '/' . $options['name'] .'?charset='. $options['charset'];
+
+	// Set connections
+	$cfg->set_connections($connections);
+
+	// Set default connection
+	$cfg->set_default_connection($db['default']);
+}
 );
 
 ?>

@@ -4,7 +4,7 @@
 ## Insert here your Regular Expressions to match routes
 ## Priority = First declared > Second declared ...
 
-self::$routes = array(
+$routes = array(
 	
 	/**
 	* Here you can configure the enrouting internal redirection.
@@ -54,7 +54,7 @@ self::$routes = array(
 	*/
 	'www' => array(
 
-	'controller' => 'index' // Default controller --> IndexController
+		'controller' => 'index' // Default controller --> IndexController
 
 	)
 
