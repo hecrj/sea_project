@@ -2,6 +2,8 @@
 
 # Set your web domain
 define('WEB_DOMAIN', $_SERVER['HTTP_HOST']);
+# Set webmasters email
+define('WEB_EMAIL', 'hector0193@gmail.com');
 
 # Set true if you want to activate ORM database
 define('ORM_ACTIVE', true);

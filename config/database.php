@@ -36,7 +36,7 @@ $db = array(
 function($cfg) use ($db)
 {
 	// Set path to models directory
-	$cfg->set_model_directory(DIR_MODELS);
+	$cfg->set_model_directory(DIR . 'app/models/');
 
 	// Define connections as protocol url
 	foreach($db['connections'] as $connection => $options)
