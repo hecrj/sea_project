@@ -1,18 +1,31 @@
 <?php
 
+
 # Set your web domain
 define('WEB_DOMAIN', $_SERVER['HTTP_HOST']);
 # Set webmasters email
-define('WEB_EMAIL', 'hector0193@gmail.com');
+define('WEB_EMAIL', 'your@email.com');
 
-# Set true if you want to activate ORM database
-define('ORM_ACTIVE', true);
-# Set ORM path in vendor folder -> default: php-activerecord
-define('ORM_PATH', 'php-activerecord');
-# Set ORM main file in vendor/ORM folder -> default: vendor/php-activerecord/ActiveRecord.php
-define('ORM_MAIN_FILE', 'ActiveRecord.php');
-# Set ORM config faile in config folder
-define('ORM_CONFIG_FILE', 'database.php');
-define('PHP_ACTIVERECORD_AUTOLOAD_DISABLE', true);
+# Set any secure server key to add entropy to hashes
+define('SERVER_KEY', 'I am a Key, change me at your will');
+
+# Define session names
+define('SESSION_NAME', 'SID');
+define('SESSION_SECURE', 'SID_SECURE');
+
+/**
+ * Set vendors to load like:
+ * $vendors = array(
+ * 		'VENDOR_MAIN_FILE'	=>	'VENDOR_PATH'
+ * );
+ * 
+ * VENDOR_MAIN_FILE does not include .php extension.
+ * VENDOR_PATH is the path inside vendor/ directory.
+ *
+ * @var array
+ */
+$vendors = array(
+	'ActiveRecord'	=>	'php-activerecord'
+);
 
 ?>

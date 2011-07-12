@@ -1,12 +1,12 @@
 <?php header('HTTP/1.1 403 Forbidden'); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>ERROR 403 - Forbidden</title>
 <style type="text/css">
 body {
-	padding: 25px;
+	padding: 0 25px;
 	color: #333;
 	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
 	font-size: 1em;
@@ -20,7 +20,7 @@ h1, h3 {
 	margin-bottom: 0.5em;
 }
 h1 { line-height: 36px; }
-section, footer { margin: 25px 0; }
+section, footer { margin: 50px 0; }
 	.error, .error h3 { color: #900; }
 		.error h3 { border-bottom: 1px solid #900; }
 p {
@@ -41,7 +41,7 @@ footer { font-size: 0.8em; text-align: center; }
 </section>
 <?php if(isset($e)): ?>
 <section class="error">
-		<h3>Some errors have ocurred during your request:</strong></h3>
+		<h3>Some errors have ocurred during your request:</h3>
 		<p><?= $e->getMessage(); ?></p>
 </section>
 <footer>Edit this page at your will in: <strong><?= __FILE__ ?></strong></footer>
