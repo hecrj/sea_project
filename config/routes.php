@@ -48,7 +48,7 @@
  * )
  */
 
-$routes = array(
+$routeRules = array(
 	'www' => array(
 		
 		'controller'	=>	'index' // Default controller: IndexController
