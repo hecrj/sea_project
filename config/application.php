@@ -2,16 +2,16 @@
 
 
 # Set your web domain
-define('WEB_DOMAIN', $_SERVER['HTTP_HOST']);
+const WEB_DOMAIN = 'lahectarea.com';
 # Set webmasters email
-define('WEB_EMAIL', 'your@email.com');
+const WEB_EMAIL = 'your@email.com';
 
 # Set any secure server key to add entropy to hashes
-define('SERVER_KEY', 'I am a Key, change me at your will');
+const SERVER_KEY = 'I am a Key, change me at your will';
 
 # Define session names
-define('SESSION_NAME', 'SID');
-define('SESSION_SECURE', 'SID_SECURE');
+const SESSION_NAME = 'SID';
+const SESSION_SECURE = 'SID_SECURE';
 
 /**
  * Set vendors to load like:

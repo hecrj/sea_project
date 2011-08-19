@@ -5,10 +5,9 @@ define('DIR', dirname(__DIR__).'/');
 
 require(DIR . 'core/Application.php');
 
-use Core\Application;
-
 $classes = array(
 	'Autoloader'		=>	'Core\\Components\\Autoloader',
+	'Controller'		=>	'Core\\Controller',
 	'Request'			=>	'Core\\Components\\Request',
 	'Router'			=>	'Core\\Components\\Router\\Router',
 	'Route'				=>	'Core\\Components\\Router\\Route',
@@ -19,7 +18,7 @@ $classes = array(
 	'View'				=>	'Core\\View'
 );
 
-$application = new Application($classes);
+$application = new Core\Application($classes);
 $application->init();
 
 ?>
