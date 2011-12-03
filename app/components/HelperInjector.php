@@ -14,11 +14,10 @@ class HelperInjector extends DynamicInjector
 	);
 
 	protected $dependencies = array(	
-		'form'			=>	array('security', 'request')
+		'cache'			=>	array('templating'),
+		'form'			=>	array('security', 'request'),
 	);
 	
 	protected $shared = array('cache', 'javascript');
 	
 }
-
-?>
