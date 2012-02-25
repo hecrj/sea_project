@@ -1,0 +1,39 @@
+Sea framework - 1. Introducción
+====================================
+Si hay alguna tarea que tengo pendiente desde hace cierto tiempo es redactar una buena **documentación** para Sea framework. Y es que la documentación es algo indispensable en cualquier proyecto de código abierto que pretenda facilitar el uso a los demás. Sería muy difícil aprender un lenguaje de programación sin documentación que nos ayudará a ello, por ejemplo.
+
+Por lo tanto, he decidido quitarme la *espinita* y empezar a redactar la documentación que tanto tiempo lleva pendiente. Aquí y para todos vosotros. Posteriormente la **reescribiré** en inglés para que el idioma no suponga ningún obstáculo para nadie y crearé una página web recopilando toda la información relacionada con el framework. Pero vayamos poco a poco y empecemos por el principio.
+
+¿Qué es un framework?
+----------------------------
+**La pregunta clave**. En software, un framework es un punto de partida, una base con una estructura y convenciones a partir de la cual puedes empezar a construir tu aplicación. Un buen framework debe facilitar increíblemente el desarrollo al mismo tiempo que lo hace más divertido y menos pesado.
+
+Por ejemplo, con Sea puedes desarrollar un sistema de identificación de usuarios sin tener que administrar sesiones y cookies directamente, el framework se encarga de hacerlo por ti. Por supuesto, si lo deseas puedes hacerlo a tu manera, o incluso puedes **extender** el comportamiento original del framework y adaptarlo a tus necesidades. Suena bien, ¿verdad?
+
+¿Necesito un framework para desarrollar mi aplicación?
+--------------------------------------------------------
+Depende mucho de la **complejidad** de la aplicación y del **tiempo** que se disponga para desarrollarla. Aprender a utilizar un framework puede llevar unos cuantos días, pero la inversión suele valer la pena. Sobre todo si la aplicación tiene un nivel de complejidad considerable.
+
+Al principio, utilizar un framework puede parecer una manera de desarrollar un poco restrictiva, pues se deben seguir unas convenciones, pero con el tiempo es posible desarrollar aplicaciones relativamente complejas en poco tiempo.
+
+No hace falta decir que todo esto dependerá también del framework que se escoja, si es más complejo o menos, si tiene una estructura simple y una curva de aprendizaje suave o no, etc.
+
+Sea framework. Simple, limpio y extensible
+---------------------------------------------------------
+El principal objetivo de Sea framework es que el código producido sea simple, limpio, intuitivo y natural.
+
+**¿Cómo se consigue esto?** Para empezar todo está completamente orientado a objetos. Nuestra mente está muy habituada a tratar con objetos. De hecho, ¡tratamos con ellos todo el tiempo!  Así, en el framework podemos encontrar peticiones, formularios, paginaciones, autentificadores, etc. Todos con características y métodos diferentes que los definen.
+
+Además, Sea utiliza el patrón de diseño **MVC** (**M**odelo-**V**ista-**C**ontrolador) para estructurar todas las aplicaciones web. De este modo se consigue separar datos, diseño y lógica, lo cual es perfecto para reutilizar código y mantener todo el proyecto perfectamente ordenado.
+
+Por otro lado, el framework incluye, de forma nativa, diversos componentes que permiten simplificar **enormemente** las tareas más comunes en el desarrollo web. La idea es que el desarrollador se concentre en el problema que quiere resolver sin necesidad de preocuparse por lo más básico.
+
+Por último, durante el desarrollo se ha puesto un gran empeño en que todos los componentes sean completamente independientes. En otras palabras, todas las piezas que conforman el framework se conectan entre ellas para funcionar **conjuntamente**, pero estas conexiones son completamente **personalizables**. Esto permite al programador desarrollar o **extender** cualquier componente a su gusto y conectarlo al framework sin problemas.
+
+Open source
+-----------------------------
+Sea framework es completamente open-source, o código abierto, lo que significa que puedes ver todo su código sin problemas, modificarlo... ¡Incluso participar en su desarrollo! Para ello puedes visitar [el repositorio de Sea framework en GitHub](https://github.com/hector0193/sea_project).
+
+En el próximo capítulo...
+-----------------------------
+En el siguiente capítulo aprenderemos a iniciar un proyecto con Sea y entenderemos su estructura y funcionamiento básicos. ¡Prepara los dedos porque nos vamos a poner a picar algo de código!
