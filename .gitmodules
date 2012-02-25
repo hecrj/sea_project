@@ -3,4 +3,4 @@
 	url = git://github.com/hector0193/sea_core.git
 [submodule "vendor/php-activerecord"]
 	path = vendor/php-activerecord
-	url = git://github.com/kla/php-activerecord.git
+	url = git://github.com/hector0193/php-activerecord.git
