@@ -28,5 +28,3 @@ $db = array(
 	'default'	=>	'development'
 	
 );
-
-?>

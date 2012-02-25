@@ -2,7 +2,7 @@
 
 /**
  * Set vendors to load like:
- * $vendors = array(
+ * return array(
  * 		'VENDOR_MAIN_FILE'	=>	'VENDOR_PATH'
  * );
  * 
@@ -11,6 +11,6 @@
  *
  * @var array
  */
-$vendors = array(
+return array(
 	'ActiveRecord'	=>	'php-activerecord'
 );

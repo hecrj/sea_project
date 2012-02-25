@@ -9,7 +9,7 @@ class HelperInjector extends DynamicInjector
 	
 	protected $classes = array(
 		'cache'				=>	'Core\\Helpers\\Cache',
-		'form'				=>	'Core\\Helpers\\Form',
+		'form'				=>	'Core\\Helpers\\Form\\Form',
 		'javascript'		=>	'Core\\Helpers\\Javascript'
 	);
 
