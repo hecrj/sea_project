@@ -5,7 +5,7 @@
 	</div>
 <?php else: ?>
 	<div class="alert alert-block alert-error">
-		<p><strong>¡Ups! Ha ocurrido algun error:</strong></p>
+		<p><strong>¡Oops! Some errors have occurred:</strong></p>
 		<ul>
 		<?php foreach($fieldset->getErrors() as $error): ?>
 			<li><?= $error ?></li>
