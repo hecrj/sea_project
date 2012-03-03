@@ -12,5 +12,6 @@
  * @var array
  */
 return array(
-	'ActiveRecord'	=>	'php-activerecord'
+	//'ActiveRecord'	=>	'php-activerecord'	# Uncomment this line to activate database support
+												# You will need to initialize the php-activerecord git submodule first!
 );
