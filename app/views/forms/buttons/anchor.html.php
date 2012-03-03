@@ -1,0 +1,1 @@
+<a class="btn<?= $button->shift('class') ?>"<?= $button->getAttributes() ?>><?= $button->getText() ?></a>
