@@ -1,0 +1,105 @@
+Sea framework - 2. Instalación y configuración
+================================================
+En este capítulo aprenderemos a iniciar un nuevo proyecto con Sea framework y analizaremos su estructura básica así como su configuración.
+
+Estructura de Sea framework
+------------------------------------------------
+Antes de comenzar es necesario que sepamos como está estructurado el framework. Sea está dividido en tres partes diferentes:
+
+* [**sea_core**](https://github.com/hector0193/sea_core): Constituye la parte más importante del framework: arquitectura, componentes, helpers, clases principales... Es la parte que se actualiza más frecuentemente.
+
+* [**sea_project**](https://github.com/hector0193/sea_project): Está formado por las carpetas y archivos por defecto necesarios para empezar cualquier nuevo proyecto. Contiene un submódulo apuntando a la última versión estable de `sea_core`.
+
+* [**sea_console**](https://github.com/hector0193/sea_console): Una pequeña utilidad en línea de comandos que ayuda a realizar tareas básicas como crear nuevos proyectos, controladores, vistas, etc.
+
+Cada parte del framework tiene un repositorio independiente, esto permite hacer cambios en el núcleo sin que los nuevos proyectos se vean afectados hasta que todo sea estable.
+
+En este capítulo nos centraremos en la parte `sea_project`. Aprenderemos a crear nuevos proyectos y analizaremos su estructura y configuración por defecto.
+
+Si quieres saber más puedes curiosear cada repositorio. También puedes informarte acerca de los [submódulos de Git](http://book.git-scm.com/5_submodules.html).
+
+Crear un nuevo proyecto
+------------------------------------------------
+La mejor manera de crear un nuevo proyecto es utilizando el sistema de control de versiones [Git](http://git-scm.com/). Para ello, una vez instalado Git clonamos el repositorio `sea_project` con el siguiente comando:
+
+  {{lang:shell}}
+  git clone git://github.com/hector0193/sea_project.git sample
+
+Con esto lograremos tener una copia de la última versión del proyecto por defecto de Sea framework que contiene la estructura y configuración necesarias para empezar a desarrollar cualquier aplicación. Sin embargo, antes es necesario iniciar el submódulo del núcleo para obtener su última versión estable. Solo necesitamos unos comandos más:
+
+  {{lang:shell}}
+  cd sample
+  git submodule init core
+  git submodule update core
+
+¡Perfecto! ¡Acabamos de crear un nuevo proyecto!
+
+Estructura del proyecto
+------------------------------------------------
+Fíjemonos ahora en la estructura del proyecto que acabamos de crear. Al entrar en el directorio principal del proyecto podemos observar diferentes carpetas. Veamos cual es la utilidad de cada una:
+
+* **/app**: Contiene toda la lógica principal de la aplicación: controladores, vistas, componentes, helpers, etc.
+
+* **/cache**: Almacena datos ya procesados para ganar velocidad y rendimiento. Entenderemos su funcionamiento más adelante, cuando aprendamos a utilizar el componente `Cache`.
+
+* **/config**: En ella podemos encontrar los principales archivos de configuración. La mayoría de ellos define diferentes constantes que se utilizan en algunos componentes del framework.
+
+* **/doc**: Incluye la documentación del framework clasificada por idiomas.
+
+* **/public**: Representa el directorio raíz de nuestra aplicación web. Todas las peticiones entrantes al servidor web se redirigirán internamente a esta carpeta. El archivo `index.php` que hay dentro se encarga de inicializar el framework. En esta carpeta debemos meter las imágenes, estilos y javascripts que utilicen las vistas de nuestro proyecto (en su subdirectorio correspondiente, por supuesto).
+
+* **/vendor**: Contiene otros proyectos, componentes o librerías externos al framework que necesitemos utilizar en nuestra aplicación.
+
+También hay algunos archivos en el directorio principal:
+
+* **.gitmodules**: Información de los submódulos utilizados en el proyecto.
+
+* **.htaccess**: Se encarga de redireccionar internamente las peticiones hacia el directorio `/public`.
+
+* **.sea_project**: Archivo vacío. Su presencia hace que `sea_console` pueda identificar los proyectos desarrollados con Sea framework.
+
+Configuración del proyecto
+------------------------------------------------
+Todo nuevo proyecto, por defecto, viene configurado para empezar a desarrollar inmediatamente sin preocuparse. Sin embargo, es muy probable que en algún momento necesitemos modificar dicha configuración. Analicemos el contenido del directorio `/config`:
+
+* **application.php**: Configuración principal de la aplicación. Contiene datos sobre el dominio principal, el correo del webmaster, etc.
+
+* **boot.php**: Archivo vacío por defecto que se carga al inicializar el framework. Su principal utilidad es la de definir funciones sencillas que puedas necesitar en la aplicación.
+
+* **database.php**: Configuración para realizar conexiones a la base de datos. Estudiaremos su contenido profundamente cuando aprendamos a utilizar **los modelos**.
+
+* **routes.php**: Definición de las diferentes rutas a las cuales asignar ciertos controladores y/o acciones. Aprenderemos a definirlas con precisión al estudiar el componente `Routing`.
+
+* **vendors.php**: Definición de los componentes o librerías externos que se deben cargar. Entenderemos cómo utilizarlo correctamente más adelante.
+
+Iremos aprendiendo a configurar diferentes aspectos del framework conforme vayamos avanzando y estudiando sus diferentes componentes. Por el momento, podemos modificar la configuración de la aplicación y añadir el dominio correcto y nuestro correo electrónico. Por ejemplo:
+
+  {{lang:PHP}}
+  # Set your web domain
+  const WEB_DOMAIN = 'lahectarea.es';
+  
+  # Set webmasters email
+  const WEB_EMAIL = 'soporte@lahectarea.es';
+  
+  // [...]
+
+Métodos alternativos de instalación
+------------------------------------------------
+Existen otras formas de crear un nuevo proyecto.
+
+La consola de Sea framework permite crear un nuevo proyecto utilizando un solo comando:
+
+  {{lang:shell}}
+  sea new sample
+  
+Sin embargo, para poder utilizarla correctamente es necesario seguir un proceso de instalación un poco complicado. Dedicaremos un capítulo de la documentación a `sea_console` en el futuro donde trataremos con detalle su puesta a punto y sus principales funcionalidades.
+
+Alternativamente, es posible descargar [`sea_project`](https://github.com/hector0193/sea_project) manualmente desde Github en forma de archivo comprimido. Para crear un proyecto solo necesitaremos descomprimir dicho archivo en la ruta que deseemos y, posteriormente, repetir el proceso con la versión adecuada de [`sea_core`](https://github.com/hector0193/sea_core), aunque extrayéndolo en el subdirectorio `/core`.
+
+La principal desventaja de este método es que, al no utilizar Git, no será tan fácil aplicar actualizaciones, ya que deberemos preocuparnos de obtener siempre la versión estable de `sea_core` que funcione con la versión de `sea_project` que vamos a utilizar. Además, tendremos más dificultades para mantener un control de versiones durante el desarrollo y administrar los submódulos y librerías externas.
+
+Por estos motivos es muy recomendable utilizar Git, no solo con Sea framework, sino con cualquier proyecto relacionado con el desarrollo de software. ¡Si quieres saber más no dudes en visitar su [página web oficial](http://git-scm.com/)!
+
+En el próximo capítulo...
+------------------------------------------------
+En el siguiente capítulo entenderemos el **flujo del framework** desde que se produce una petición hasta que se genera su respuesta y aprenderemos a **crear nuevas páginas** dentro de nuestra aplicación utilizando el **patrón MVC**.
