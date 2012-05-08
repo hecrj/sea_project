@@ -22,15 +22,15 @@ Crear un nuevo proyecto
 ------------------------------------------------
 La mejor manera de crear un nuevo proyecto es utilizando el sistema de control de versiones [Git](http://git-scm.com/). Para ello, una vez instalado Git clonamos el repositorio `sea_project` con el siguiente comando:
 
-  {{lang:shell}}
-  git clone git://github.com/hector0193/sea_project.git sample
+    {{lang:shell}}
+    git clone git://github.com/hector0193/sea_project.git project_example
 
 Con esto lograremos tener una copia de la última versión del proyecto por defecto de Sea framework que contiene la estructura y configuración necesarias para empezar a desarrollar cualquier aplicación. Sin embargo, antes es necesario iniciar el submódulo del núcleo para obtener su última versión estable. Solo necesitamos unos comandos más:
 
-  {{lang:shell}}
-  cd sample
-  git submodule init core
-  git submodule update core
+    {{lang:shell}}
+    cd project_example
+    git submodule init core
+    git submodule update core
 
 ¡Perfecto! ¡Acabamos de crear un nuevo proyecto!
 
@@ -43,6 +43,8 @@ Fíjemonos ahora en la estructura del proyecto que acabamos de crear. Al entrar 
 * **/cache**: Almacena datos ya procesados para ganar velocidad y rendimiento. Entenderemos su funcionamiento más adelante, cuando aprendamos a utilizar el componente `Cache`.
 
 * **/config**: En ella podemos encontrar los principales archivos de configuración. La mayoría de ellos define diferentes constantes que se utilizan en algunos componentes del framework.
+
+* **/core**: Contiene la última versión estable del núcleo del framework. En su interior podemos encontrar una copia del repositorio `sea_core`.
 
 * **/doc**: Incluye la documentación del framework clasificada por idiomas.
 
@@ -74,14 +76,14 @@ Todo nuevo proyecto, por defecto, viene configurado para empezar a desarrollar i
 
 Iremos aprendiendo a configurar diferentes aspectos del framework conforme vayamos avanzando y estudiando sus diferentes componentes. Por el momento, podemos modificar la configuración de la aplicación y añadir el dominio correcto y nuestro correo electrónico. Por ejemplo:
 
-  {{lang:PHP}}
-  # Set your web domain
-  const WEB_DOMAIN = 'lahectarea.es';
-  
-  # Set webmasters email
-  const WEB_EMAIL = 'soporte@lahectarea.es';
-  
-  // [...]
+    {{lang:PHP}}
+    # Set your web domain
+    const WEB_DOMAIN = 'lahectarea.es';
+    
+    # Set webmasters email
+    const WEB_EMAIL = 'soporte@lahectarea.es';
+    
+    // [...]
 
 Métodos alternativos de instalación
 ------------------------------------------------
@@ -89,8 +91,8 @@ Existen otras formas de crear un nuevo proyecto.
 
 La consola de Sea framework permite crear un nuevo proyecto utilizando un solo comando:
 
-  {{lang:shell}}
-  sea new sample
+    {{lang:shell}}
+    sea new project_example
   
 Sin embargo, para poder utilizarla correctamente es necesario seguir un proceso de instalación un poco complicado. Dedicaremos un capítulo de la documentación a `sea_console` en el futuro donde trataremos con detalle su puesta a punto y sus principales funcionalidades.
 
