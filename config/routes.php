@@ -39,9 +39,12 @@ namespace Core\Components\Routing\Routes;
  * By default, any parameter in the :routePattern has the requirement '[a-z0-9-]+' except :page and :id
  * which have '\d+' by default.
  * 
- * Finally, you have to add the RouteCollection to the Router:
+ * Finally, you have to return the collection related to a subdomain:
  * 
- * $router->addRoutes(:subdomain, $routes);
+ * return array(
+ * 		:subdomain	=>	$routes,
+ *		[...]
+ * );
  * 
  * As you see, every RouteCollection (or module) is related directly with a subdomain. This ables you to
  * create an admin module, for example:
@@ -52,8 +55,10 @@ namespace Core\Components\Routing\Routes;
  * $admin = new RouteCollection('admin');
  * 		// ...
  * 	
- * 	$router	->addRoutes('www', $blog)
- * 			->addRoutes('admin', $admin);
+ * return array(
+ *		'www'	=>	$blog,
+ *		'admin'	=>	$admin
+ * );
  * 	
  * Now if you access towards the www subdomain the active module will be 'blog', otherwise in the admin
  * subdomain the 'admin' module will be active.
@@ -61,4 +66,6 @@ namespace Core\Components\Routing\Routes;
 
 $routes = new RouteCollection;
 
-$router->addRoutes('www', $routes);
+return array(
+	'www'	=>	$routes
+);
