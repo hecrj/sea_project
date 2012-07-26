@@ -37,7 +37,7 @@ footer { font-size: 0.8em; text-align: center; }
 	<h1>Oops! The requested page is forbidden!</h1>
 	<p>The page you are trying to access seems to be restricted to authorized users...</p>
 	<p>You have requested the following page:</p>
-	<p><strong>http://<?= $_SERVER['HTTP_HOST'] . ($_SERVER[ROUTE_PROTOCOL] ? : '/') ?></strong></p>
+	<p><strong>http://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?></strong></p>
 </section>
 <?php if(isset($e)): ?>
 <section class="error">

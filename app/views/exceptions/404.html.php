@@ -36,7 +36,7 @@ footer { font-size: 0.8em; text-align: center; }
 	<h1>Oops! The requested page has not been found!</h1>
 	<p>The page you are trying to access seems to be unavailable...</p>
 	<p>You have requested the following page:</p>
-	<p><strong>http://<?= $_SERVER['HTTP_HOST'] . ($_SERVER[ROUTE_PROTOCOL] ? : '/') ?></strong></p>
+	<p><strong>http://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?></strong></p>
 	<p>It's possible that the website is having some technical problems or it's under manteinance.</p>
 	<p>Please, try again later and if the problem persists, contact the webmaster: <strong><?= WEB_EMAIL ?></strong></p>
 </section>
