@@ -1,14 +1,14 @@
 <?php
 
 // Load database configuration
-require(DIR . '/config/database.php');
+require(\Sea\DIR . '/config/database.php');
 
 // Initialize ActiveRecord configuration
 \ActiveRecord\Config::initialize(
 function($cfg) use ($db)
 {
 	// Set path to models directory
-	$cfg->set_model_directory(DIR . 'app/models/');
+	$cfg->set_model_directory(\Sea\DIR . 'app/models/');
 
 	// Define connections as protocol url
 	foreach($db['connections'] as $connection => $options)
