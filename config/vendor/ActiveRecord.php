@@ -21,5 +21,3 @@ function($cfg) use ($db)
 	$cfg->set_default_connection($db['default']);
 }
 );
-
-?>
