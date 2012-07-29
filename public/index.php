@@ -1,14 +1,21 @@
 <?php
 
 namespace Sea;
+use Sea\Core\Application;
+use Sea\Core\Components\Autoloader;
+use Sea\Core\Components\Routing\Request;
 
-// Define absolute path to include files
-define('Sea\DIR', dirname(__DIR__).'/');
+define('Sea\DIR', dirname(__DIR__) . '/');
 
-require(\Sea\DIR . 'core/Application.php');
-require(\Sea\DIR . 'core/components/Autoloader.php');
+require(DIR . 'config/boot.php');
+require(DIR . 'core/components/Autoloader.php');
 
-$autoloader = new Core\Components\Autoloader();
+$loader = new Autoloader;
+require(DIR . 'config/autoload.php');
+$loader->register();
 
-$application = new Core\Application();
-$application->init($autoloader);
+$request = Request::createFromGlobals();
+$routes  = require(DIR . 'config/routes.php');
+
+$application = new Application;
+$application->respond($request, $routes);
