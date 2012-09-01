@@ -64,7 +64,9 @@ namespace Sea\Core\Components\Routing\Routes;
  * subdomain the 'admin' module will be active.
  */
 
-$routes = new RouteCollection;
+$routes = new RouteCollection();
+
+$routes->match('root', '/', 'index#index');
 
 return array(
 	'www'	=>	$routes
