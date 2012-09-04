@@ -1,14 +1,14 @@
 <?php
 
 namespace Sea;
-use Sea\Core\Application;
-use Sea\Core\Components\Autoloader;
-use Sea\Core\Components\Routing\Request;
+use Sea\Application;
+use Sea\Components\Autoloader;
+use Sea\Components\Routing\Request;
 
 define('Sea\DIR', dirname(__DIR__) . '/');
 
 require(DIR . 'config/boot.php');
-require(DIR . 'core/components/Autoloader.php');
+require(DIR . 'sea/components/Autoloader.php');
 
 $loader = new Autoloader;
 require(DIR . 'config/autoload.php');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sea\App;
+namespace App;
 const EMAIL  = 'your@email.com';
 
 # Load components configuration

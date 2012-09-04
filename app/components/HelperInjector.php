@@ -1,16 +1,16 @@
 <?php
 
-namespace Sea\App\Components;
-use Sea\Core\Components\DynamicInjector;
+namespace App\Components;
+use Sea\Components\DynamicInjector;
 
 class HelperInjector extends DynamicInjector
 {
-	protected $injectorClass = 'Sea\\App\\Components\\ComponentInjector';
+	protected $injectorClass = 'App\\Components\\ComponentInjector';
 	
 	protected $classes = array(
-		'cache'				=>	'Sea\\Core\\Helpers\\Cache',
-		'form'				=>	'Sea\\Core\\Helpers\\Form\\Form',
-		'javascript'		=>	'Sea\\Core\\Helpers\\Javascript'
+		'cache'				=>	'Sea\\Helpers\\Cache',
+		'form'				=>	'Sea\\Helpers\\Form\\Form',
+		'javascript'		=>	'Sea\\Helpers\\Javascript'
 	);
 
 	protected $dependencies = array(	
