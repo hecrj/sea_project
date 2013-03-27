@@ -1,7 +1,7 @@
 <?php
 
 // Load database configuration
-require(Sea\DIR . '/config/database/'. App\ENV .'.php');
+require(Sea\DIR .'/config/'. App\ENV .'/database.php');
 
 // Initialize ActiveRecord configuration
 \ActiveRecord\Config::initialize(
