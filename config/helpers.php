@@ -2,5 +2,5 @@
 
 namespace Sea\Helpers\Cache
 {
-	const EMULATE = FALSE;
+	const EMULATE = \App\EMULATE_CACHE;
 }

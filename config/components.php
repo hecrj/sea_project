@@ -8,7 +8,7 @@ namespace Sea\Components\Auth
 
 namespace Sea\Components\Cookie
 {
-	const DOMAIN = 'yourdomain.com';
+	const DOMAIN = \App\DOMAIN;
 }
 
 namespace Sea\Components\Routing
@@ -20,5 +20,5 @@ namespace Sea\Components\Session
 {
 	const NAME        = 'SID';
 	const NAME_SECURE = 'SID_SECURE';
-	const DOMAIN      = 'yourdomain.com';
+	const DOMAIN      = \App\DOMAIN;
 }
