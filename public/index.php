@@ -15,7 +15,6 @@ require(DIR . 'config/autoload.php');
 $loader->register();
 
 $request = Request::createFromGlobals();
-$routes  = require(DIR . 'config/routes.php');
 
 $application = new Application;
-$application->respond($request, $routes);
+$application->respond($request, 'config/routes.php');
